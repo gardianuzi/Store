@@ -55,7 +55,6 @@ Ensure your **package.json** contains the necessary migration and build scripts:
   "dev": "nuxt dev",
   "build": "nuxt build",
   "start": "nuxt start",
-  "migrate": "prisma migrate dev --name init",
   "migrate:prod": "prisma migrate deploy",
   "generate": "nuxt generate"
 }
@@ -67,5 +66,99 @@ Ensure your **package.json** contains the necessary migration and build scripts:
 - **Prisma** - ORM for MySQL
 - **MySQL** - Database
 - **Bootstrap & Vuetify** - UI Styling
+
+## 📷 Image Uploads
+
+Uploaded images are stored in `public/uploads/` directory. Ensure the folder exists before running the project.
+
+## 📡 API Endpoints
+
+### **Categories API**
+
+- **Get all categories (Tree Structure)**
+
+  ```http
+  GET /api/categories/tree
+  ```
+
+- **Create a new category**
+
+  ```http
+  POST /api/categories
+  ```
+
+  **Body:**
+
+  ```json
+  {
+    "name": "Category Name",
+    "parent_id": null,
+    "picture": "image.jpg"
+  }
+  ```
+
+- **Update a category**
+
+  ```http
+  PUT /api/categories/:id
+  ```
+
+  **Body:**
+
+  ```json
+  {
+    "name": "Updated Category Name"
+  }
+  ```
+
+- **Delete a category**
+  ```http
+  DELETE /api/categories/:id
+  ```
+
+### **Products API**
+
+- **Get all products**
+
+  ```http
+  GET /api/products
+  ```
+
+- **Create a new product**
+
+  ```http
+  POST /api/products
+  ```
+
+  **Body:**
+
+  ```json
+  {
+    "name": "Product Name",
+    "category_id": 1,
+    "picture": "image.jpg"
+  }
+  ```
+
+- **Update a product**
+
+  ```http
+  PUT /api/products/:id
+  ```
+
+  **Body:**
+
+  ```json
+  {
+    "name": "Updated Product Name"
+  }
+  ```
+
+- **Delete a product**
+  ```http
+  DELETE /api/products/:id
+  ```
+
+---
 
 ✅ **Project is now ready to run!** Let me know if you need further refinements! 🚀
