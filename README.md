@@ -1,75 +1,71 @@
-# Nuxt Minimal Starter
+# Nuxt 3 Full-Stack Project
 
-Look at the [Nuxt documentation](https://nuxt.com/docs/getting-started/introduction) to learn more.
+## 📌 Description
 
-## Setup
+This is a **Full-Stack Nuxt 3** project using **Prisma, MySQL** for backend services. It provides CRUD operations for **Categories** and **Products**, including:
 
-Make sure to install dependencies:
+- Recursive Category Tree
+- Image Upload (Stored Locally)
+- Collapsible List UI for Categories
+- Product Count in Categories
+- Bootstrap + Vuetify for UI
 
-```bash
-# npm
+## 🚀 How to Run the Project
+
+### **1️⃣ Install Dependencies**
+
+```sh
 npm install
-
-# pnpm
-pnpm install
-
-# yarn
-yarn install
-
-# bun
-bun install
 ```
 
-## Development Server
+### **2️⃣ Configure Environment Variables**
 
-Start the development server on `http://localhost:3000`:
+Create a **.env** file in the root directory and add your MySQL connection details:
 
-```bash
-# npm
+```ini
+DATABASE_URL="mysql://user:password@localhost:3306/your_database"
+```
+
+### **3️⃣ Run Database Migrations**
+
+```sh
+npx prisma migrate dev --name init
+```
+
+### **4️⃣ Start the Development Server**
+
+```sh
 npm run dev
-
-# pnpm
-pnpm dev
-
-# yarn
-yarn dev
-
-# bun
-bun run dev
 ```
 
-## Production
+It will start the project at: `http://localhost:3000`
 
-Build the application for production:
+### **5️⃣ Start the Production Server**
 
-```bash
-# npm
-npm run build
-
-# pnpm
-pnpm build
-
-# yarn
-yarn build
-
-# bun
-bun run build
+```sh
+npm run start
 ```
 
-Locally preview production build:
+## 📌 Package.json Scripts
 
-```bash
-# npm
-npm run preview
+Ensure your **package.json** contains the necessary migration and build scripts:
 
-# pnpm
-pnpm preview
-
-# yarn
-yarn preview
-
-# bun
-bun run preview
+```json
+"scripts": {
+  "dev": "nuxt dev",
+  "build": "nuxt build",
+  "start": "nuxt start",
+  "migrate": "prisma migrate dev --name init",
+  "migrate:prod": "prisma migrate deploy",
+  "generate": "nuxt generate"
+}
 ```
 
-Check out the [deployment documentation](https://nuxt.com/docs/getting-started/deployment) for more information.
+## 🛠 Tech Stack
+
+- **Nuxt 3** - Frontend & Backend
+- **Prisma** - ORM for MySQL
+- **MySQL** - Database
+- **Bootstrap & Vuetify** - UI Styling
+
+✅ **Project is now ready to run!** Let me know if you need further refinements! 🚀
