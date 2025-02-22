@@ -3,11 +3,10 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "build": "nuxt build",
     "dev": "nuxt dev",
-    "generate": "nuxt generate",
-    "preview": "nuxt preview",
-    "postinstall": "nuxt prepare"
+    "build": "nuxt build",
+    "start": "prisma generate && node .output/server/index.mjs",
+    "migrate": "prisma migrate deploy"
   },
   "dependencies": {
     "bootstrap": "^5.3.3",
